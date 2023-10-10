@@ -28,7 +28,7 @@
 
 The [DataCite Metadata Schema [external link]](https://schema.datacite.org) has become a de facto standard for describing research data. Despite all of its efforts to standardize metadata allocation, this schema offers a great deal of leeway and alternatives in detail. For example, it is optional to clearly identify languages used in the metadata either via ISO 639-1 or via IETF BCP 47 language tags. The value of metadata increases with its consistency, which is achieved through compliance with standards. One of the aims of the Best Practice Guide presented here is therefore to limit the choices provided by DataCite by specifying a preference, and in this way to ensure as much consistency as possible.
 
-This document is a guideline for the use of the official [DataCite Metadata Schema documentation [external link]](https://schema.datacite.org), [version 4.4 [external link]](https://doi.org/10.14454/3w3z-sa82). A support documentation for more convenience and better navigation can be found here as a HTML version [DataCite Metadata Schema Documentation [external link, different versions available]](https://datacite-metadata-schema.readthedocs.io).
+This document is a guideline for the use of the official [DataCite Metadata Schema documentation [external link]](https://schema.datacite.org), [version 4.5 [external link]](https://docs.google.com/document/d/1UyQQwtjnu-4_4zXE4TFZ74-mjLZI3NkEf8RrF0WeOdI). A support documentation for more convenience and better navigation can be found here as a HTML version [DataCite Metadata Schema Documentation [external link, different versions available]](https://datacite-metadata-schema.readthedocs.io/en/4.5/).
 It is meant for researchers, IT and library support staff. Further information on the schema can be found on the [DataCite support site [external link]](https://support.datacite.org/docs/datacite-metadata-schema-44).
 
 To create a DataCite XML file for the project you want to describe, we recommend to you to use the [DataCite Metadata Generator [external link]](https://dhvlab.gwi.uni-muenchen.de/datacite-generator/). This tool is kept in sync with this guideline, safe for transmission times inbetween versions. If you want to create metadata for research data on a scale that is too large for manual procedures, please contact one of the institutions named above.
@@ -72,8 +72,8 @@ The third part, [Examples](#c-examples), is a compilation of DataCite examples.
 * [19 fundingReference [o]](#19-fundingreference-o)
 * [20 relatedItem [o]](#20-relateditem-o)
 
-Mandatory fields are indicated by the tag **[m]**, recommended fields by **[r]** and optional fields by **[o]**. Note: This guide deviates from the [DataCite Metadata Schema 4.4 [external link]]( https://doi.org/10.14454/3w3z-sa82 ) in the assessment of recommend and optional properties and assigns different levels of obligation to some of them. These are asterisked in the list above.  
-The presence of these fields improves discovery, makes long-term management of the datasets easier for the hosting institution and is helpful for future (re-)users of the dataset. The benefits outweigh the cost of requiring additional information. Furthermore, the information can often be provided by researchers in a straightforward way; like providing a short abstract in the _description_.  
+Mandatory fields are indicated by the tag **[m]**, recommended fields by **[r]** and optional fields by **[o]**. Note: This guide deviates from the [DataCite Metadata Schema 4.4 [external link]]( https://doi.org/10.14454/3w3z-sa82 ) in the assessment of recommend and optional properties and assigns different levels of obligation to some of them. These are asterisked in the list above.
+The presence of these fields improves discovery, makes long-term management of the datasets easier for the hosting institution and is helpful for future (re-)users of the dataset. The benefits outweigh the cost of requiring additional information. Furthermore, the information can often be provided by researchers in a straightforward way; like providing a short abstract in the _description_.
 
 
 ## [C. Examples](#examples)
@@ -150,7 +150,7 @@ Unless otherwise specified all information in the metadata concerns the research
 * Start with the more specific organizational units first and end with the most generic unit, separated by semicolon:
 ```xml
 <affiliation xml:lang="de">
-            Institut für Romanische Philologie; Ludwig-Maximilians-Universität München    
+    Institut für Romanische Philologie; Ludwig-Maximilians-Universität München
 </affiliation>
 
 <affiliation
@@ -164,7 +164,7 @@ Unless otherwise specified all information in the metadata concerns the research
 * Always specify the language in which the name is given using a _xml:lang_ tag.
 ```xml
         <publisher xml:lang="en">Leibniz Supercomputing Centre</publisher>
-        <publisher xml:lang="de">Leibniz-Rechenzentrum</publisher>        
+        <publisher xml:lang="de">Leibniz-Rechenzentrum</publisher>
 ```
 * Affiliations are to be specified as of the time of creation of the resource.
 * Add a persistent identifier (PID) for the institution, preferably a ([ROR-ID [external link]](https://ror.org/) (Research Organization Registry); if there is no entry in ROR, use a [ISNI-ID [external link]](http://www.isni.org/search) (International Standard Name Identifier) or GND-ID.
@@ -200,7 +200,7 @@ If you want to publish several versions of the research data, but also want to h
 
 __Example__
 ```xml
-<identifier identifierType="DOI">10.5282/ubm/data.158</identifier>             
+<identifier identifierType="DOI">10.5282/ubm/data.158</identifier>
 ```
 
 ### 2 creator [m]
@@ -296,10 +296,10 @@ __Example__
 #### Mandatory subject annotations
 * The following subject annotations are mandatory (must occur at least once):
 
-|Type of Subject | Standard                | Type of standard          | Usage hint |
-|----------------|-------------------------|---------------------------|----------------------------------------------------------------|
-|Discipline      | DDC                     | Classification            | Add 3 digits DDC as specific as possible followed by the English term for the discipline ([Canonical Source [external link]](https://www.oclc.org/content/dam/oclc/dewey/resources/summaries/deweysummaries.pdf)) |
-|Keywords        | Wikidata QID and GND  | Keyword                   | Wikidata and GND terms are both mandatory, including redundancy (if an appropriate entry does not exist contact the responsible Institution. Use [Wikidata-Search [external link]](https://www.wikidata.org) and [GND-Search [external link]](http://swb.bsz-bw.de/DB=2.104/LNG=EN/) to find the appropriate identifiers.
+|Type of Subject | Standard             | Type of standard  | Usage hint               |
+|----------------|----------------------|-------------------|--------------------------|
+|Discipline      | DDC                  | Classification    | Add 3 digits DDC as specific as possible followed by the English term for the discipline ([Canonical Source [external link]](https://www.oclc.org/content/dam/oclc/dewey/resources/summaries/deweysummaries.pdf)) |
+|Keywords        | Wikidata QID and GND | Keyword           | Wikidata and GND terms are both mandatory, including redundancy (if an appropriate entry does not exist contact the responsible Institution. Use [Wikidata-Search [external link]](https://www.wikidata.org) and [GND-Search [external link]](http://swb.bsz-bw.de/DB=2.104/LNG=EN/) to find the appropriate identifiers.
 
 * It is also mandatory to include at least the _valueURI_ or the _classificationCode_ attribute.
 * To improve machine-readablility we recommend using **both** _valueURI_ and _classificationCode_.
@@ -307,14 +307,14 @@ __Example__
 __Example__
 ```xml
 <subjects>
-<!-- discipline specification using Dewey Decimal Classification (DDC) -->    
+<!-- discipline specification using Dewey Decimal Classification (DDC) -->
     <subject
         xml:lang="en"
         subjectScheme="dewey"
         classificationCode="521">
         Celestial mechanics
     </subject>
-<!-- keywords -->   
+<!-- keywords -->
     <subject
         xml:lang="en"
         subjectScheme="Wikidata QID"
@@ -356,18 +356,18 @@ For this example a complete DataCite metadata file is available, see [VerbaAlpin
     <subject xml:lang="en"
              subjectScheme="dewey"
              schemeURI="http://dewey.info/"
-             classificationCode="410">   
+             classificationCode="410">
                410 Linguistics
     </subject>
     <subject xml:lang="en"
-             subjectScheme="dewey"    
+             subjectScheme="dewey"
              schemeURI="http://dewey.info/"
              classificationCode="004">
                004 Data processing computer science
     </subject>
     <subject
         xml:lang="de"
-        subjectScheme="GND"        
+        subjectScheme="GND"
         schemeURI="https://d-nb.info/gnd/"
         valueURI="https://d-nb.info/gnd/4740815-7"
         classificationCode ="4740815-7">
@@ -375,7 +375,7 @@ For this example a complete DataCite metadata file is available, see [VerbaAlpin
     </subject>
     <subject
         xml:lang="de"
-        subjectScheme="wikidata"        
+        subjectScheme="wikidata"
         schemeURI="https://www.wikidata.org/wiki/"
         valueURI="https://www.wikidata.org/wiki/Q136689"
         classificationCode="Q136689">
@@ -383,7 +383,7 @@ For this example a complete DataCite metadata file is available, see [VerbaAlpin
     </subject>
     <subject
         xml:lang="en"
-        subjectScheme="wikidata"        
+        subjectScheme="wikidata"
         schemeURI="https://www.wikidata.org/wiki/"
         valueURI="https://www.wikidata.org/wiki/Lexeme:L643765"
         classificationCode="L643765">
@@ -392,7 +392,7 @@ For this example a complete DataCite metadata file is available, see [VerbaAlpin
     <!-- optional-->
     <subject
         xml:lang="en"
-        subjectScheme="Glottocode"        
+        subjectScheme="Glottocode"
         schemeURI="https://glottolog.org/resource/languoid/id/"
         valueURI="https://glottolog.org/resource/languoid/id/high1286"
         classificationCode="high1286">
@@ -400,7 +400,7 @@ For this example a complete DataCite metadata file is available, see [VerbaAlpin
     </subject>
     <subject
         xml:lang="de"
-        subjectScheme="geonames"        
+        subjectScheme="geonames"
         schemeURI="http://www.geonames.org/"
         valueURI="http://www.geonames.org/2764958"
         classificationCode="2764958">
@@ -423,22 +423,22 @@ For this example a complete DataCite metadata file is available, see [VerbaAlpin
 * The following roles are recommended:
 
 |Option            | Description from DataCite standard (italics) and usage hints |
-|-----------------|----------------------------------------------------------------------------|
+|------------------|--------------------------------------------------------------|
 |ContactPerson     | Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource.|
 |DataCollector     | Person/institution responsible for finding, gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).|
 |DataCurator       | Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance of data quality.|
 |DataManager       | Person or organization responsible for digital maintainance of the finished resource, e.g. migration to new hardware, software and security updates for servers, access rights management.|
 |Distributor       | Institution responsible for dissemination of electronic or printed copies of the resource. The distributor is not neccessarily  also a hosting institution of a digital resource, e.g., if server hosting is outsourced but the distributor still organizes access to the resource.|
-|Editor       | A person who oversees the details related to the publication format of the resource.|
+|Editor            | A person who oversees the details related to the publication format of the resource.|
 |HostingInstitution| Typically, the organization allowing the resource to be available on the internet through the provision of its hardware/software/operating support.|
 |ProjectLeader     | Person officially designated as head of project team or sub-project team instrumental in the work necessary to development of the resource.|
 |ProjectManager    | Person officially designated as manager of a project. Project may consist of one or many project teams and sub-teams.|
 |ProjectMember     | Person on the membership list of a designated project/project team. All persons with a contract in the context of the project which produced the resource.|
 |Researcher        | A person involved in analyzing data or the results of an experiment or formal study. May indicate an intern or assistant to one of the authors who helped with research but who was not so “key” as to be listed as an author / creator.|
-|ResearchGroup        | Typically refers ot a group of individuals within a lab, department or division that has a specifically defined focus of activity.|
+|ResearchGroup     | Typically refers ot a group of individuals within a lab, department or division that has a specifically defined focus of activity.|
 |RightsHolder      | Person or institution owning or managing property rights, including intellectual property rights over the resource. Mandatory for non-free licenses; person or institution that owns the rights listed in field [_rights_](#16-rights-m).|
-|Sponsor      | Organization or person that issued a contract or under the auspices of which a work has been printed, published, developed, etc.|
-|Supervisor      | We recommmed using this role for PhD advisors of the creators, who did not particiate as creators or in other roles themselves.|
+|Sponsor           | Organization or person that issued a contract or under the auspices of which a work has been printed, published, developed, etc.|
+|Supervisor        | We recommmed using this role for PhD advisors of the creators, who did not particiate as creators or in other roles themselves.|
 |WorkPackageLeader | Person responsible for ensuring the comprehensive contents, versioning, and availability of the work package during the development of the resource.|
 
 
@@ -478,7 +478,7 @@ __Example__
 [DataCite documentation [external link]](https://schema.datacite.org/meta/kernel-4.4/doc/DataCite-MetadataKernel_v4.4.pdf#page=22)
 
 * This field is recommended.
-* It is recommended to indicate date and time following the [W3C time and data formats [external link]](https://www.w3.org/TR/NOTE-datetime). If the time is specified always include the time zone.   
+* It is recommended to indicate date and time following the [W3C time and data formats [external link]](https://www.w3.org/TR/NOTE-datetime). If the time is specified always include the time zone.
 * Time periods can be specified by specifying the start date and the end date separated by a slash (/).
 * The following types should be filled-out by the data producer:
     * Collected: time range when the resource was arranged (not necessarily identical to the time range when the resource was created).
@@ -590,7 +590,7 @@ For other identifiers we recommend to first give the origin of the ID:
 * institution-specific identifier: an ID that has meaning in the context of the institution that provides, funded or created the data.
 
 and then add, separated by a slash (/), the name of the identifer, if known.
-This way, even if the name of the ID is relatively obscure, the broader context of the ID can still be identified.   
+This way, even if the name of the ID is relatively obscure, the broader context of the ID can still be identified.
 
 __Example__
 
@@ -627,10 +627,8 @@ The element [_relatedItem_](#20-relateditem-o) can be used for information on a 
 
 #### relationTypes
 
-|Relation categories | Usage | relationType | Guidance / Example |
-|-----------------|------------|---------------|---------------------------------------------------------------------------------------------------|
-|Relation categories | Usage | relationType | Guidance / Example |
-|--------------------|---------------------|---------------------------|----------------------------------------------------------------|
+| Relation categories | Usage | relationType | Guidance / Example |
+|---------------------|-------|--------------|--------------------|
 |Versions|Use to differentiate specific and unspecific versions of a resource |HasVersion (IsVersionOf); <br>IsNewVersionOf (IsPreviousVersionOf); <br>IsVariantFormOf (IsOriginalFormOf); <br>IsIdenticalTo; <br>Obsoletes (IsObsoletedBy)|Be as specific as possible. Use "NewVersion" and "PreviousVersion" if A is the predecessor or successor of B; <br>use of "Obsolets" and "IsObsoletedBy" is recommended for standards, legal regulations, etc. <br>If the version is unspecific use "HasVersion" and "IsVersionOf".|
 |Hierarchy|Use to create hierarchical relationships|IsPartOf (HasPart)| "HasPart" indicates A includes the part B; "IsPart" indicates A is a portion of B<br> <br> Example: a container "HasPart" a dataset|
 |Provenance|Use to refer to source materials |IsSourceOf; <br>IsDerivedFrom; <br> Continues (IsContinuedBy)|Examples:<br>Volume 2 of a book series (resource A) "Continues" volume 1 (resource B) <br><br> A dataset (resource A) "IsSourceOf" a diagram (resource B)|
@@ -647,7 +645,7 @@ The ClimEx Project "IsDescribedBy" an article in the Journal of Applied Meteorol
 ```xml
 <relatedIdentifiers>
     <relatedIdentifier relatedIdentifierType="DOI" relationType="IsDescribedBy">
-        10.1175/JAMC-D-18-0021.1             
+        10.1175/JAMC-D-18-0021.1
     </relatedIdentifier>
 </relatedIdentifiers>
 ```
@@ -658,14 +656,14 @@ PubMed provides a description and additional information on an article published
 ```xml
 <relatedIdentifiers>
     <relatedIdentifier
-		relatedIdentifierType="PMID"
-		relationType="IsDescribedBy">
-			 34552256
+        relatedIdentifierType="PMID"
+        relationType="IsDescribedBy">
+            34552256
     </relatedIdentifier>
     <relatedIdentifier
         relatedIdentifierType="arXiv"
         relationType="IsNewVersionOf">
-             	arXiv:2107.02222          
+            arXiv:2107.02222
     </relatedIdentifier>
 </relatedIdentifiers>
 ```
@@ -678,7 +676,7 @@ Wikidata provides metadata for the BMLO project and dataset. Thus, BMLO "HasMeta
     <relatedIdentifier
         relatedIdentifierType="URL"
         relationType="HasMetadata"
-        subjectScheme="wikidata"        
+        subjectScheme="wikidata"
         schemeURI="https://www.wikidata.org/wiki/">
             Q47191
     </relatedIdentifier>
@@ -690,11 +688,11 @@ __Example 4 (Pangaea)__
 Pangaea publishes datasets in the field of Earth & Environmental Science. Pangaea shows the sources that were used during the creation of the research dataset, similar to a list of references. For the full DataCite metadata for this example see DataCite Search: https://search.datacite.org/works/10.1594/pangaea.941445 .
 ```xml
 <relatedIdentifiers>
-    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1016/0034-6667(75)90049-4</relatedIdentifier>  
-    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1016/j.revpalbo.2020.104236</relatedIdentifier>  
-    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1016/j.revpalbo.2019.02.004</relatedIdentifier>  
-    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1080/01916122.2014.940472</relatedIdentifier>  
-    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1191/095968398671104653</relatedIdentifier>  
+    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1016/0034-6667(75)90049-4</relatedIdentifier>
+    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1016/j.revpalbo.2020.104236</relatedIdentifier>
+    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1016/j.revpalbo.2019.02.004</relatedIdentifier>
+    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1080/01916122.2014.940472</relatedIdentifier>
+    <relatedIdentifier relationType="References" relatedIdentifierType="DOI">10.1191/095968398671104653</relatedIdentifier>
     <relatedIdentifier relationType="References" relatedIdentifierType="Handle">1885/144170</relatedIdentifier>
 </relatedIdentifiers>
 ```
@@ -704,7 +702,7 @@ Pangaea publishes datasets in the field of Earth & Environmental Science. Pangae
 [DataCite documentation [external link]](https://schema.datacite.org/meta/kernel-4.4/doc/DataCite-MetadataKernel_v4.4.pdf#page=26)
 
 * This field is recommended, whereas it is optional in the DataCite standard.
-* This field is repeatable. Thus, different measures for the size / volume of the dataset can be given.  
+* This field is repeatable. Thus, different measures for the size / volume of the dataset can be given.
 * If you make use of this field, always specify the size in Bytes (denoted by 'B' - note that a lower case 'b' stands for bit). Prefered are: kB, MB, GB, TB etc. Separate number and unit with one space. The decimal separator must be the decimal point, e.g., *7.23 GB*.
 * If the data are compressed, specify the size of the compressed file/archive.
 * If the data consist of several units (without using an archival software), specify their combined sizes.
@@ -942,19 +940,19 @@ Here information on a journal series is provided, in particular the journal titl
 ```xml
 <!-- Article is published in Journal "Ladinia"; Article = A, Journal = B -->
 <relatedItems>
-	<relatedItem relatedItemType="Journal" relationType="IsPublishedIn">
-		<relatedItemIdentifier relatedItemIdentifierType="ISSN">1124-1004</relatedItemIdentifier>
-      <titles>
-        <title xml:lang="de">Ladinia</title>
-        <title titleType="AlternativeTitle" xml:lang="de">Revista scientifica dl Istitut Ladin Micurá de Rü</title>
-      </titles>
-      <publicationYear>2019</publicationYear>
-      <volume>43</volume>
-      <issue>1</issue>
-      <firstPage>139</firstPage>
-      <lastPage>155</lastPage>
-      <publisher>Istitut Ladin Micurá de Rü</publisher>
-	</relatedItem>
+    <relatedItem relatedItemType="Journal" relationType="IsPublishedIn">
+        <relatedItemIdentifier relatedItemIdentifierType="ISSN">1124-1004</relatedItemIdentifier>
+        <titles>
+            <title xml:lang="de">Ladinia</title>
+            <title titleType="AlternativeTitle" xml:lang="de">Revista scientifica dl Istitut Ladin Micurá de Rü</title>
+        </titles>
+        <publicationYear>2019</publicationYear>
+        <volume>43</volume>
+        <issue>1</issue>
+        <firstPage>139</firstPage>
+        <lastPage>155</lastPage>
+        <publisher>Istitut Ladin Micurá de Rü</publisher>
+    </relatedItem>
 </relatedItems>
 ```
 ## Examples
